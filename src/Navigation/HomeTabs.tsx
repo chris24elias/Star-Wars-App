@@ -1,54 +1,46 @@
 import React from "react";
 import { createStackNavigator } from "react-navigation-stack";
-import { createDrawerNavigator } from "react-navigation-drawer";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import Routes from "./Routes";
-import Messages from "../Screens/Messages/Messages";
-import MessageDetails from "../Screens/MessageDetails/MessageDetails";
-import Nearby from "../Screens/Nearby";
-import SquadsScreen from "../Screens/Squads";
-import Profile from "../Screens/Profile";
-import SquadDetails from "../Screens/SquadDetails";
+
 import { Icon } from "native-base";
+import Films from "../Screens/Films";
+import People from "../Screens/People";
+import Planets from "../Screens/Planets";
+import Species from "../Screens/Species";
 
 const FilmsStack = createStackNavigator({
-    [Routes.NEARBY_SCREEN]: {
-        screen: Nearby,
+    [Routes.FILMS_SCREEN]: {
+        screen: Films,
         navigationOptions: {
-            title: "Nearby",
+            title: "Films",
         },
     },
 });
 
 const PeopleStack = createStackNavigator({
-    [Routes.SQUADS_SCREEN]: {
-        screen: SquadsScreen,
+    [Routes.PEOPLE_SCREEN]: {
+        screen: People,
         navigationOptions: {
-            title: "Squads",
+            title: "People",
         },
     },
 });
 
 const PlanetsStack = createStackNavigator({
-    [Routes.MESSAGES_SCREEN]: {
-        screen: Messages,
+    [Routes.PLANETS_SCREEN]: {
+        screen: Planets,
         navigationOptions: {
-            title: "Messages",
-        },
-    },
-    [Routes.MESSAGE_DETAILS_SCREEN]: {
-        screen: MessageDetails,
-        navigationOptions: {
-            title: "Chat Room",
+            title: "Planets",
         },
     },
 });
 
 const SpeciesStack = createStackNavigator({
-    [Routes.PROFILE_SCREEN]: {
-        screen: Profile,
+    [Routes.SPECIES_SCREEN]: {
+        screen: Species,
         navigationOptions: {
-            title: "Profile",
+            title: "Species",
         },
     },
 });
@@ -57,41 +49,43 @@ export default createBottomTabNavigator(
     {
         [Routes.FILMS_STACK]: {
             screen: FilmsStack,
-            path: "squads",
+            path: "films",
             navigationOptions: {
-                tabBarIcon: (props: any) => getTabIcon(props, { name: "group", type: "MaterialIcons" }),
-                title: "Squads",
+                tabBarIcon: (props: any) =>
+                    getTabIcon(props, { name: "filmstrip", type: "MaterialCommunityIcons" }),
+                title: "Films",
             },
         },
         [Routes.PEOPLE_STACK]: {
             screen: PeopleStack,
-            path: "nearby",
+            path: "people",
             navigationOptions: {
-                tabBarIcon: (props: any) => getTabIcon(props, { name: "map", type: "MaterialIcons" }),
-                title: "Nearby",
+                tabBarIcon: (props: any) => getTabIcon(props, { name: "person", type: "MaterialIcons" }),
+                title: "People",
             },
         },
 
         [Routes.PLANETS_STACK]: {
             screen: PlanetsStack,
-            path: "messages",
+            path: "planets",
             navigationOptions: {
-                tabBarIcon: (props: any) => getTabIcon(props, { name: "message", type: "MaterialIcons" }),
-                title: "Messages",
+                tabBarIcon: (props: any) => getTabIcon(props, { name: "ios-planet", type: "Ionicons" }),
+                title: "Planets",
             },
         },
 
         [Routes.SPECIES_STACK]: {
             screen: SpeciesStack,
-            path: "profile",
+            path: "species",
             navigationOptions: {
-                tabBarIcon: (props: any) => getTabIcon(props, { name: "person", type: "MaterialIcons" }),
-                title: "Profile",
+                tabBarIcon: (props: any) =>
+                    getTabIcon(props, { name: "pine-tree", type: "MaterialCommunityIcons" }),
+                title: "Species",
             },
         },
     },
     {
-        // initialRouteName: Routes.NEARBY_STACK,
+        // initialRouteName: "",
     }
 );
 
