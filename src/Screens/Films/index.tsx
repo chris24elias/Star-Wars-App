@@ -30,7 +30,7 @@ const Films = ({ navigation }: Props) => {
                         <FilmCard
                             film={item}
                             key={index}
-                            onPress={() => navigation.navigate(Routes.FILM_DETAILS_SCREEN, { film: item })}
+                            onPress={() => navigation.push(Routes.FILM_DETAILS_SCREEN, { film: item.url })}
                         />
                     );
                 }}

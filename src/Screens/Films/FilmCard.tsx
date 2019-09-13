@@ -10,35 +10,20 @@ interface FilmCardProps {
 
 const FilmCard = ({ film, onPress }: FilmCardProps) => {
     const { title, director, producer, opening_crawl } = film;
-
+    var fields = film.url.split("/");
+    let id = fields[fields.length - 2];
     return (
-        // <TouchableOpacity onPress={onPress}>
-        //     <Text>{film.title}</Text>
-        // </TouchableOpacity>
         <Card
             title={title}
-            // image={require("../images/pic2.jpg")}
-            featuredSubtitle={director}
+            image={{
+                uri: `https://starwars-visualguide.com/assets/img/films/${id}.jpg`,
+            }}
         >
             <Text style={{ marginBottom: 10 }}>Director: {film.director}</Text>
             <Text style={{ marginBottom: 10 }}>Producer: {film.producer}</Text>
             <Text style={{ marginBottom: 10 }}>Release: {film.release_date}</Text>
-            {/* <Text style={{ marginBottom: 10 }}>Director {film.director}</Text> */}
-            {/* <FlatList 
-                data={film.characters}
-                renderItem={({ item, index, separators }) => {
-                    return (
-                        <FilmCard
-                            film={item}
-                            key={index}
-                            onPress={() => navigation.navigate(Routes.FILM_DETAILS_SCREEN, { film: item })}
-                        />
-                    );
-                }}
-                keyExtractor={(item, index) => index.toString()}
-            /> */}
+
             <Button
-                // icon={<Icon name="code" color="#ffffff" />}
                 buttonStyle={{ borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0 }}
                 title="Explore"
                 onPress={onPress}
