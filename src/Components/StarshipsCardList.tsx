@@ -5,9 +5,10 @@ import { Card, ListItem, Button, Icon } from "react-native-elements";
 
 interface StarshipsCardListProps {
     starships: string[];
+    onPress: any;
 }
 
-const StarshipsCardList = ({ starships }: StarshipsCardListProps) => {
+const StarshipsCardList = ({ starships, onPress }: StarshipsCardListProps) => {
     return (
         <Card title="Starships">
             <FlatList
@@ -19,6 +20,7 @@ const StarshipsCardList = ({ starships }: StarshipsCardListProps) => {
 
                     return (
                         <Avatar
+                            onPress={() => onPress(item)}
                             containerStyle={{ marginHorizontal: 10 }}
                             rounded
                             size="medium"

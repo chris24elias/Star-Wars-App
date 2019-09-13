@@ -5,9 +5,10 @@ import { Card, ListItem, Button, Icon } from "react-native-elements";
 
 interface CharactersCardListProps {
     characters: string[];
+    onPress: any;
 }
 
-const CharactersCardList = ({ characters }: CharactersCardListProps) => {
+const CharactersCardList = ({ characters, onPress }: CharactersCardListProps) => {
     return (
         <Card title="Characters">
             <FlatList
@@ -19,6 +20,7 @@ const CharactersCardList = ({ characters }: CharactersCardListProps) => {
 
                     return (
                         <Avatar
+                            onPress={() => onPress(item)}
                             containerStyle={{ marginHorizontal: 10 }}
                             rounded
                             size="medium"

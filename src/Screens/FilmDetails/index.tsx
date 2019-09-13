@@ -8,6 +8,7 @@ import PlanetsCardList from "../../Components/PlanetsCardList";
 import StarshipsCardList from "../../Components/StarshipsCardList";
 import CharactersCardList from "../../Components/CharactersCardList";
 import SpeciesCardList from "../../Components/SpeciesCardList";
+import Routes from "../../Navigation/Routes";
 
 interface Props {
     navigation: any;
@@ -29,14 +30,23 @@ const FilmDetails = ({ navigation }: Props) => {
                     <Text style={styles.opening}>{opening_crawl}</Text>
                 </Card>
 
-                <CharactersCardList characters={characters} />
-                <StarshipsCardList starships={starships} />
+                <CharactersCardList
+                    characters={characters}
+                    onPress={(item) => navigation.navigate(Routes.PEOPLE_DETAILS, { character: item })}
+                />
+                <StarshipsCardList starships={starships} onPress={(item) => {}} />
 
-                <PlanetsCardList planets={planets} />
+                <PlanetsCardList
+                    planets={planets}
+                    onPress={(item) => navigation.navigate(Routes.PLANETS_DETAILS, { planet: item })}
+                />
 
-                <VehiclesCardList vehicles={vehicles} />
+                <VehiclesCardList vehicles={vehicles} onPress={(item) => {}} />
 
-                <SpeciesCardList species={species} />
+                <SpeciesCardList
+                    species={species}
+                    onPress={(item) => navigation.navigate(Routes.SPECIES_DETAILS, { species: item })}
+                />
             </ScrollView>
         </View>
     );

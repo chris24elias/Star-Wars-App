@@ -5,9 +5,10 @@ import { Card, ListItem, Button, Icon } from "react-native-elements";
 
 interface SpeciesCardListProps {
     species: string[];
+    onPress: any;
 }
 
-const SpeciesCardList = ({ species }: SpeciesCardListProps) => {
+const SpeciesCardList = ({ species, onPress }: SpeciesCardListProps) => {
     return (
         <Card title="Species">
             <FlatList
@@ -19,6 +20,7 @@ const SpeciesCardList = ({ species }: SpeciesCardListProps) => {
 
                     return (
                         <Avatar
+                            onPress={() => onPress(item)}
                             containerStyle={{ marginHorizontal: 10 }}
                             rounded
                             size="medium"

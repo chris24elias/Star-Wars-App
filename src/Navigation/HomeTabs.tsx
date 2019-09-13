@@ -9,6 +9,9 @@ import People from "../Screens/People";
 import Planets from "../Screens/Planets";
 import Species from "../Screens/Species";
 import FilmDetails from "../Screens/FilmDetails";
+import PeopleDetails from "../Screens/PeopleDetails";
+import PlanetDetails from "../Screens/PlanetDetails";
+import SpeciesDetails from "../Screens/SpeciesDetails";
 
 const FilmsStack = createStackNavigator({
     [Routes.FILMS_SCREEN]: {
@@ -32,6 +35,12 @@ const PeopleStack = createStackNavigator({
             title: "People",
         },
     },
+    [Routes.PEOPLE_DETAILS]: {
+        screen: PeopleDetails,
+        navigationOptions: {
+            title: "People Detaiils",
+        },
+    },
 });
 
 const PlanetsStack = createStackNavigator({
@@ -41,6 +50,12 @@ const PlanetsStack = createStackNavigator({
             title: "Planets",
         },
     },
+    [Routes.PLANETS_DETAILS]: {
+        screen: PlanetDetails,
+        navigationOptions: {
+            title: "Planets Detaiils",
+        },
+    },
 });
 
 const SpeciesStack = createStackNavigator({
@@ -48,6 +63,12 @@ const SpeciesStack = createStackNavigator({
         screen: Species,
         navigationOptions: {
             title: "Species",
+        },
+    },
+    [Routes.SPECIES_DETAILS]: {
+        screen: SpeciesDetails,
+        navigationOptions: {
+            title: "Species Detaiils",
         },
     },
 });
