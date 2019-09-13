@@ -8,12 +8,19 @@ import Films from "../Screens/Films";
 import People from "../Screens/People";
 import Planets from "../Screens/Planets";
 import Species from "../Screens/Species";
+import FilmDetails from "../Screens/FilmDetails";
 
 const FilmsStack = createStackNavigator({
     [Routes.FILMS_SCREEN]: {
         screen: Films,
         navigationOptions: {
             title: "Films",
+        },
+    },
+    [Routes.FILM_DETAILS_SCREEN]: {
+        screen: FilmDetails,
+        navigationOptions: {
+            title: "Film Detaiils",
         },
     },
 });
