@@ -9,6 +9,10 @@ interface PlanetsCardListProps {
 }
 
 const PlanetsCardList = ({ planets, onPress }: PlanetsCardListProps) => {
+    if (planets.length == 0) {
+        return null;
+    }
+
     return (
         <Card title="Planets">
             <FlatList

@@ -9,6 +9,10 @@ interface CharactersCardListProps {
 }
 
 const CharactersCardList = ({ characters, onPress }: CharactersCardListProps) => {
+    if (characters.length == 0) {
+        return null;
+    }
+
     return (
         <Card title="Characters">
             <FlatList

@@ -9,6 +9,10 @@ interface VehiclesCardListProps {
 }
 
 const VehiclesCardList = ({ vehicles, onPress }: VehiclesCardListProps) => {
+    if (vehicles.length == 0) {
+        return null;
+    }
+
     return (
         <Card title="Vehicles">
             <FlatList

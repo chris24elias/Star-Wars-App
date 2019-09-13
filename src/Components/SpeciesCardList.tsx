@@ -9,6 +9,10 @@ interface SpeciesCardListProps {
 }
 
 const SpeciesCardList = ({ species, onPress }: SpeciesCardListProps) => {
+    if (species.length == 0) {
+        return null;
+    }
+
     return (
         <Card title="Species">
             <FlatList

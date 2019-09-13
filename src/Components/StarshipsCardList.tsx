@@ -9,6 +9,10 @@ interface StarshipsCardListProps {
 }
 
 const StarshipsCardList = ({ starships, onPress }: StarshipsCardListProps) => {
+    if (starships.length == 0) {
+        return null;
+    }
+
     return (
         <Card title="Starships">
             <FlatList
